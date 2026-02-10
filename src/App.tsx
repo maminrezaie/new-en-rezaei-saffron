@@ -41,3 +41,5 @@ const App = () => (
     </HelmetProvider>
   </QueryClientProvider>
 );
+
+export default App;
