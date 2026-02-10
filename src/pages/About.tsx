@@ -1,4 +1,5 @@
 import shopImage from "@/assets/shop-image.jpg";
+import managerPortrait from "@/assets/manager-portrait.jpg";
 import PersianStoreCTA from "@/components/PersianStoreCTA";
 
 const About = () => {
@@ -47,20 +48,27 @@ const About = () => {
       <section className="py-16">
         <div className="section-container max-w-3xl">
           <h2 className="text-3xl font-serif text-foreground mb-6">About the Manager</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            <strong className="text-foreground">Mohammad Amin Rezaie</strong> — A graduate in English Language and Literature, 
-            Mohammad Amin works as a teacher and translator (English–Persian), bringing a unique bridge between 
-            Iranian saffron culture and the global market. His passion for quality and authenticity drives every 
-            aspect of Rezaei Saffron.{" "}
-            <a
-              href="https://maminrezaie.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-            >
-              View his CV
-            </a>
-          </p>
+          <div className="flex flex-col sm:flex-row gap-6 items-start">
+            <img
+              src={managerPortrait}
+              alt="Mohammad Amin Rezaie"
+              className="w-28 h-28 rounded-full object-cover shadow-md flex-shrink-0"
+            />
+            <p className="text-muted-foreground leading-relaxed">
+              <strong className="text-foreground">Mohammad Amin Rezaie</strong> — A graduate in English Language and Literature, 
+              Mohammad Amin works as a teacher and translator (English–Persian), bringing a unique bridge between 
+              Iranian saffron culture and the global market. His passion for quality and authenticity drives every 
+              aspect of Rezaei Saffron.{" "}
+              <a
+                href="https://maminrezaie.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+              >
+                View his CV
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 

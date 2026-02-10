@@ -190,7 +190,7 @@ const Index = () => {
 
       {/* Recent Products Slider */}
       <section className="py-4 md:py-8 bg-background">
-        <div className="section-container">
+        <div className="px-2 md:px-4">
           <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Recent Products
           </h2>
@@ -200,14 +200,14 @@ const Index = () => {
           <div className="relative">
             <button
               onClick={() => handleRecentArrow(-1)}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
             <div
               ref={recentRef}
-              className="flex items-stretch gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6"
+              className="flex items-stretch gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-10"
             >
               {allProducts.map((product) => (
                 <RecentProductCard key={product.name} product={product} />
@@ -215,7 +215,7 @@ const Index = () => {
             </div>
             <button
               onClick={() => handleRecentArrow(1)}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5 text-foreground" />
