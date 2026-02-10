@@ -1,14 +1,23 @@
+import shopImage from "@/assets/shop-image.jpg";
+
 const About = () => {
   return (
     <div className="py-12 md:py-20">
       {/* Hero */}
       <section className="section-container mb-16">
-        <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-6">About Rezaei Saffron</h1>
-        <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-          Established in Gonabad in 2012 (1391 Iranian calendar), Rezaei Saffron & Dried Fruits has been 
-          dedicated to providing the purest saffron, sourced directly from our family farms. Located on 
-          Sa'di Street (Isar), our mission is to bring the world the finest saffron — direct from farmer to you.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-6">About Rezaei Saffron</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Established in Gonabad in 2012 (1391 Iranian calendar), Rezaei Saffron & Dried Fruits has been 
+              dedicated to providing the purest saffron, sourced directly from our family farms. Located on 
+              Sa'di Street (Isar), our mission is to bring the world the finest saffron — direct from farmer to you.
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img src={shopImage} alt="Rezaei Saffron storefront in Gonabad" className="w-full h-auto object-cover" />
+          </div>
+        </div>
       </section>
 
       {/* What We Offer */}
@@ -33,15 +42,23 @@ const About = () => {
         </div>
       </section>
 
-      {/* About the Owner */}
+      {/* About the Manager */}
       <section className="py-16">
         <div className="section-container max-w-3xl">
-          <h2 className="text-3xl font-serif text-foreground mb-6">About the Owner</h2>
+          <h2 className="text-3xl font-serif text-foreground mb-6">About the Manager</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             <strong className="text-foreground">Mohammad Amin Rezaie</strong> — A graduate in English Language and Literature, 
             Mohammad Amin works as a teacher and translator (English–Persian), bringing a unique bridge between 
             Iranian saffron culture and the global market. His passion for quality and authenticity drives every 
-            aspect of Rezaei Saffron.
+            aspect of Rezaei Saffron.{" "}
+            <a
+              href="https://maminrezaie.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+            >
+              View his CV
+            </a>
           </p>
         </div>
       </section>
@@ -55,6 +72,24 @@ const About = () => {
             officially registered and we guarantee their authenticity. When you choose Rezaei Saffron, 
             you choose purity, tradition, and trust — direct from the farm to your table.
           </p>
+        </div>
+      </section>
+
+      {/* Persian Shop CTA */}
+      <section className="bg-accent/10 py-16">
+        <div className="section-container max-w-3xl text-center">
+          <h2 className="text-3xl font-serif text-foreground mb-4">Visit Our Persian Store</h2>
+          <p className="text-muted-foreground mb-6">
+            For up to date prices and easy ordering in Persian, visit our dedicated Iranian storefront.
+          </p>
+          <a
+            href="https://rezaei-saffron.ir"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
+          >
+            🇮🇷 فروشگاه فارسی
+          </a>
         </div>
       </section>
     </div>
