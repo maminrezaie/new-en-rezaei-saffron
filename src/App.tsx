@@ -37,6 +37,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          <WhatsAppFloat />
         </HashRouter>
       </TooltipProvider>
     </HelmetProvider>
