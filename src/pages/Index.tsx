@@ -266,6 +266,31 @@ const Index = () => {
           </div>
         </div>
       </section>
+      {/* Why Choose Us */}
+      <section className="py-12 md:py-20 bg-background">
+        <div className="section-container">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+            Why Choose Us
+          </h2>
+          <p className="text-center text-muted-foreground mb-8 text-sm">
+            Quality and trust at every step
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: Sprout, title: "Farm-Direct Supply", desc: "Sourced directly from Gonabad farms, no middlemen" },
+              { icon: Award, title: "Export-Grade Quality", desc: "Premium Negin saffron with verified purity and grading" },
+              { icon: Globe, title: "Global Shipping", desc: "Reliable delivery to customers worldwide" },
+              { icon: ShieldCheck, title: "Money-Back Guarantee", desc: "Full refund if you're not satisfied with the quality" },
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-sm">
+                <item.icon className="w-8 h-8 text-accent mb-3" />
+                <h3 className="font-serif text-foreground font-semibold text-sm mb-2">{item.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* About Banner */}
       <section className="py-16 md:py-24 bg-dark text-cream">
