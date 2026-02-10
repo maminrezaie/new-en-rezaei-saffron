@@ -1,4 +1,5 @@
 import shopImage from "@/assets/shop-image.jpg";
+import managerPortrait from "@/assets/manager-portrait.jpg";
 import PersianStoreCTA from "@/components/PersianStoreCTA";
 
 const About = () => {
