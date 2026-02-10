@@ -106,6 +106,9 @@ const SaffronPrice = () => {
             </p>
           </article>
         </div>
+
+        {/* Persian Shop CTA */}
+        <PersianStoreCTA />
       </div>
     </>
   );

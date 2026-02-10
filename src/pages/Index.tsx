@@ -393,6 +393,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Persian Shop CTA */}
+      <PersianStoreCTA />
     </div>
   );
 };
