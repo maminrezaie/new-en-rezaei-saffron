@@ -297,8 +297,8 @@ const Index = () => {
       {/* Why Gonabad Rezaei Saffron */}
       <section className="py-12 md:py-20 bg-muted">
         <div className="section-container">
-          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
-            Why Gonabad Rezaei Saffron
+          <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
+            Why Gonabad Saffron
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-sm">
             A UNESCO-recognized heritage of excellence

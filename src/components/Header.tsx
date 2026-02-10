@@ -120,6 +120,31 @@ const Header = () => {
               >
                 <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
               </a>
+              <div className="flex justify-center gap-2 mt-2">
+                <a
+                  href="https://rezaei-saffron.ir/Arabic/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full border border-muted-foreground/40 flex items-center justify-center text-lg hover:bg-muted transition-colors"
+                  aria-label="Arabic version"
+                >
+                  🇮🇶
+                </a>
+                <a
+                  href="https://rezaei-saffron.ir/Kurdish/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full border border-muted-foreground/40 flex items-center justify-center hover:bg-muted transition-colors"
+                  aria-label="Kurdish version"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
+                    <rect width="60" height="13.33" fill="#ED2024"/>
+                    <rect y="13.33" width="60" height="13.34" fill="#fff"/>
+                    <rect y="26.67" width="60" height="13.33" fill="#21A038"/>
+                    <circle cx="30" cy="20" r="8" fill="#FEBD11"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </nav>
         )}
