@@ -40,6 +40,35 @@ const featuredProducts = [
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const recentRef = useRef<HTMLDivElement>(null);
+  const recentIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const scrollRecent = useCallback((dir: number) => {
+    const el = recentRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild ? (el.firstElementChild as HTMLElement).offsetWidth + 12 : 200;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    const nextPos = el.scrollLeft + dir * cardWidth;
+    if (nextPos > maxScroll) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (nextPos < 0) {
+      el.scrollTo({ left: maxScroll, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+    }
+  }, []);
+
+  // Auto-slide for recent products
+  useEffect(() => {
+    recentIntervalRef.current = setInterval(() => scrollRecent(1), 5000);
+    return () => { if (recentIntervalRef.current) clearInterval(recentIntervalRef.current); };
+  }, [scrollRecent]);
+
+  const handleRecentArrow = (dir: number) => {
+    if (recentIntervalRef.current) clearInterval(recentIntervalRef.current);
+    scrollRecent(dir);
+    recentIntervalRef.current = setInterval(() => scrollRecent(1), 5000);
+  };
 
   // Auto-slide for featured products
   useEffect(() => {
