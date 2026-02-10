@@ -123,21 +123,22 @@ const Header = () => {
               >
                 <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
               </a>
-              <div className="flex justify-center gap-2 mt-2">
+              <div className="flex justify-center items-center gap-1 mt-2 text-muted-foreground">
                 <a
                   href="https://rezaei-saffron.ir/Arabic/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full border border-muted-foreground/40 flex items-center justify-center text-lg hover:bg-muted transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-lg hover:opacity-70 transition-opacity"
                   aria-label="Arabic version"
                 >
                   🇮🇶
                 </a>
+                <span className="text-xs">/</span>
                 <a
                   href="https://rezaei-saffron.ir/Kurdish/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full border border-muted-foreground/40 flex items-center justify-center hover:bg-muted transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                   aria-label="Kurdish version"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
