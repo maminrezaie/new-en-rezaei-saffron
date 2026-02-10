@@ -293,6 +293,52 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Gonabad Rezaei Saffron */}
+      <section className="py-12 md:py-20 bg-muted">
+        <div className="section-container">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+            Why Gonabad Rezaei Saffron
+          </h2>
+          <p className="text-center text-muted-foreground mb-8 text-sm">
+            A UNESCO-recognized heritage of excellence
+          </p>
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="md:w-1/2 rounded-lg overflow-hidden">
+              <img
+                src={gonabadFields}
+                alt="Saffron fields of Gonabad, Iran"
+                className="w-full h-full object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <p className="text-foreground leading-relaxed text-sm md:text-base mb-4">
+                Iran is the largest producer of saffron in the world, responsible for over 90% of global production.
+                Gonabad, in Khorasan Razavi province, sits at the heart of this ancient tradition — where saffron has been
+                cultivated for centuries using the ingenious <strong>Qanat irrigation system</strong>, a UNESCO-recognized
+                Globally Important Agricultural Heritage System (GIAHS) since 2018.
+              </p>
+              <p className="text-foreground leading-relaxed text-sm md:text-base mb-4">
+                The Qanat system channels underground water through gravity-fed tunnels, providing a sustainable
+                water source in one of the world's most arid regions. This time-tested method preserves biodiversity,
+                supports local livelihoods, and produces saffron of unmatched purity and potency.
+              </p>
+              <p className="text-muted-foreground text-xs italic">
+                Source:{" "}
+                <a
+                  href="https://www.fao.org/giahs/giahs-around-the-world/iran-qanat-based-saffron-system/en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-primary transition-colors"
+                >
+                  UN FAO — Qanat-based Saffron Farming System in Gonabad
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Banner */}
       <section className="py-16 md:py-24 bg-dark text-cream">
         <div className="section-container">
