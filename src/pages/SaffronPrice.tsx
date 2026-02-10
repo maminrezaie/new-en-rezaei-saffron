@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { productSections, type Product } from "@/data/products";
+import PersianStoreCTA from "@/components/PersianStoreCTA";
 
 const saffronProducts = productSections
   .filter((s) => ["negin", "bunch", "root", "gift"].includes(s.id))
