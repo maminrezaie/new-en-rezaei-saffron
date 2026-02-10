@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Sprout, Award, Globe, ShieldCheck } from "lucide-react";
 import { productSections, type Product } from "@/data/products";
+import gonabadFields from "@/assets/gonabad-saffron-fields.png";
 import heroBanner from "@/assets/hero-banner.jpg";
 import neginCategory from "@/assets/negin-category.png";
 import bunchCategory from "@/assets/bunch-saffron-category.png";
