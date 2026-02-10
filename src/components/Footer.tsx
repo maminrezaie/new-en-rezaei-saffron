@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo-gold.png";
-import saffronDivider from "@/assets/saffron-divider.png";
+
 
 
 const InstagramIcon = () => (
@@ -25,10 +25,8 @@ const WhatsAppIcon = () => (
 const Footer = () => {
   return (
     <footer>
-      {/* Ornamental divider */}
-      <div className="w-full">
-        <img src={saffronDivider} alt="" className="w-full h-auto" />
-      </div>
+      {/* Red band divider */}
+      <div className="w-full h-2 bg-primary" />
 
       <div className="bg-dark text-cream">
         <div className="section-container py-12 md:py-16">

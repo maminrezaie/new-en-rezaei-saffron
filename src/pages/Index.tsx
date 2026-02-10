@@ -76,7 +76,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-dark/70 via-dark/40 to-transparent" />
         </div>
         <div className="relative z-10 section-container text-card w-full">
-          <div className="max-w-md">
+          <div className="max-w-md ml-4 md:ml-8">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-2 leading-tight">
               <span className="bg-gradient-to-r from-gold to-light-gold bg-clip-text text-transparent">Premium</span>{" "}
               Iranian{" "}
@@ -85,9 +85,14 @@ const Index = () => {
             <p className="text-sm md:text-base mb-5 opacity-90 leading-relaxed">
               Buy directly from the farmers of Gonabad, Khorasan
             </p>
-            <p className="text-xs md:text-sm text-dark underline font-medium">
+            <a
+              href="https://www.fao.org/giahs/giahs-around-the-world/iran-qanat-based-saffron-system/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] md:text-xs text-dark underline font-medium hover:opacity-80 transition-opacity"
+            >
               Endorsed by UN Food & Agriculture Org
-            </p>
+            </a>
           </div>
         </div>
       </section>
@@ -95,7 +100,7 @@ const Index = () => {
       {/* Categories Slider */}
       <section className="pt-10 pb-16 md:pb-24 bg-background">
         <div className="section-container">
-          <h2 className="text-lg md:text-xl font-serif text-center text-primary mb-1">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Our Categories
           </h2>
           <p className="text-center text-muted-foreground mb-3 max-w-2xl mx-auto text-sm">
