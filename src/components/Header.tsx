@@ -6,6 +6,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
+  { to: "/saffron-price", label: "Saffron Price" },
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
