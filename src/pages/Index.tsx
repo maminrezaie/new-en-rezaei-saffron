@@ -206,7 +206,7 @@ const Index = () => {
             </button>
             <div
               ref={recentRef}
-              className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6"
+              className="flex items-stretch gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6"
             >
               {allProducts.map((product) => (
                 <RecentProductCard key={product.name} product={product} />
