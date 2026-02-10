@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo-gold.png";
-import saffronDivider from "@/assets/saffron-divider.svg";
+
 
 const InstagramIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -24,9 +24,18 @@ const WhatsAppIcon = () => (
 const Footer = () => {
   return (
     <footer>
-      {/* Saffron ornamental divider */}
-      <div className="w-full">
-        <img src={saffronDivider} alt="" className="w-full h-auto" />
+      {/* Ornamental divider */}
+      <div className="w-full overflow-hidden">
+        <svg viewBox="0 0 1200 60" className="w-full h-auto" preserveAspectRatio="none">
+          <rect width="1200" height="4" y="28" fill="hsl(0, 68%, 32%)" />
+          <circle cx="600" cy="30" r="18" fill="hsl(0, 68%, 32%)" />
+          <circle cx="600" cy="30" r="12" fill="hsl(44, 54%, 54%)" />
+          <ellipse cx="600" cy="30" rx="6" ry="4" fill="hsl(0, 68%, 32%)" />
+          <circle cx="540" cy="30" r="4" fill="hsl(44, 54%, 54%)" />
+          <circle cx="660" cy="30" r="4" fill="hsl(44, 54%, 54%)" />
+          <circle cx="500" cy="30" r="2.5" fill="hsl(0, 68%, 32%)" />
+          <circle cx="700" cy="30" r="2.5" fill="hsl(0, 68%, 32%)" />
+        </svg>
       </div>
 
       <div className="bg-dark text-cream">
@@ -87,7 +96,7 @@ const Footer = () => {
                   <span>Isar 1 Street, Gonabad, Razavi Khorasan, Iran</span>
                 </li>
               </ul>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 ml-6">
                 <a
                   href="https://instagram.com/rezaei-saffron"
                   target="_blank"
@@ -122,7 +131,7 @@ const Footer = () => {
             <div>
               <h3 className="font-serif text-accent text-lg mb-4">Persian Store</h3>
               <p className="text-sm opacity-80 mb-4">
-                Visit our Persian language store for local pricing and ordering.
+                Visit our Persian language store for up to date pricing and ordering.
               </p>
               <a
                 href="https://rezaei-saffron.ir"

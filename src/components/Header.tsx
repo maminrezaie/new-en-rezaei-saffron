@@ -32,7 +32,7 @@ const Header = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Rezaei Saffron Logo" className="h-10 md:h-14 w-auto" />
+            <img src={logo} alt="Rezaei Saffron Logo" className="h-12 md:h-16 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -54,7 +54,7 @@ const Header = () => {
               href="https://rezaei-saffron.ir"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-accent text-card rounded-md text-sm font-medium hover:bg-gold transition-colors"
+              className="px-4 py-2 border border-accent text-accent rounded-full text-sm font-medium hover:bg-accent hover:text-card transition-colors"
             >
               🇮🇷 فروشگاه فارسی
             </a>
@@ -92,7 +92,7 @@ const Header = () => {
                 href="https://rezaei-saffron.ir"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-4 mt-2 px-4 py-3 bg-accent text-card rounded-md text-sm font-medium text-center hover:bg-gold transition-colors"
+                className="mx-4 mt-2 px-4 py-3 border border-accent text-accent rounded-full text-sm font-medium text-center hover:bg-accent hover:text-card transition-colors"
               >
                 🇮🇷 فروشگاه فارسی
               </a>

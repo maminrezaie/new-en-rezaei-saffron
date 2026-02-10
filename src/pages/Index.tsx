@@ -63,40 +63,33 @@ const Index = () => {
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-2 leading-tight">
               <span className="bg-gradient-to-r from-gold to-light-gold bg-clip-text text-transparent">Premium</span>{" "}
               Iranian{" "}
-              <span className="bg-gradient-to-r from-gold to-light-gold bg-clip-text text-transparent">Saffron</span>
+              <span className="text-primary">Saffron</span>
             </h1>
             <p className="text-sm md:text-base mb-5 opacity-90 leading-relaxed">
               Buy directly from the farmers of Khorasan province, Iran
             </p>
-            <Link
-              to="/products"
-              className="inline-block px-6 py-2.5 bg-crimson text-destructive-foreground rounded-md text-sm font-medium hover:brightness-90 transition-all shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
-              style={{ backgroundColor: 'hsl(0, 68%, 25%)' }}
-            >
-              Browse Products
-            </Link>
+            <p className="text-xs md:text-sm opacity-80 italic">
+              Endorsed by UN Food & Agriculture Org
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Categories Grid */}
-      <section className="pt-6 pb-16 md:pb-24 bg-background">
+      {/* Categories Slider */}
+      <section className="pt-8 pb-16 md:pb-24 bg-background">
         <div className="section-container">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <span className="text-2xl">🌸</span>
-            <h2 className="text-2xl md:text-3xl font-serif text-center text-foreground">
-              Our Categories
-            </h2>
-          </div>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto text-sm">
+          <h2 className="text-xl md:text-2xl font-serif text-center text-primary mb-1">
+            Our Categories
+          </h2>
+          <p className="text-center text-muted-foreground mb-5 max-w-2xl mx-auto text-sm">
             Explore our range of premium saffron varieties and dried fruits
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
             {categories.map((cat) => (
               <Link
                 key={cat.name}
                 to={cat.link}
-                className="group relative overflow-hidden rounded-lg aspect-[4/3] card-hover"
+                className="group relative overflow-hidden rounded-lg aspect-[4/3] card-hover flex-shrink-0 w-[80%] sm:w-[45%] md:w-[30%] snap-start"
               >
                 <img
                   src={cat.image}
@@ -116,11 +109,17 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Arrow Divider */}
+      <div className="flex justify-center -mb-px">
+        <svg width="60" height="30" viewBox="0 0 60 30" className="text-primary fill-current">
+          <polygon points="0,0 60,0 30,30" />
+        </svg>
+      </div>
+
       {/* Featured Products - Auto-sliding */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={featuredBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-dark/80" />
         </div>
         <div className="section-container relative z-10">
           <h2 className="text-3xl md:text-4xl font-serif text-center mb-4 text-primary-foreground">
@@ -187,10 +186,10 @@ const Index = () => {
               <img
                 src={shopImage}
                 alt="Rezaei Saffron Shop in Gonabad"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover object-bottom rounded-lg"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-dark/20 rounded-lg" />
+              <div className="absolute inset-0 bg-dark/30 rounded-lg" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h3 className="font-serif text-card text-lg font-semibold">Our Shop in Gonabad</h3>
               </div>
@@ -220,7 +219,7 @@ const Index = () => {
 
 const ProductCard = ({ product }: { product: typeof featuredProducts[0] }) => (
   <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full">
-    <div className="aspect-[3/4] overflow-hidden bg-muted relative group">
+    <div className="aspect-square overflow-hidden bg-muted relative group">
       <img
         src={product.image}
         alt={product.name}
