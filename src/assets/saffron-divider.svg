@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 120" width="1400" height="120">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#B91D1D;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#D92626;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#B91D1D;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C92929;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#B91D1D;stop-opacity:1" />
+        </linearGradient>
+        <pattern id="pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M30 6 C18 18, 18 42, 30 54 C42 42, 42 18, 30 6 Z" fill="none" stroke="rgba(139,46,31,0.1)" stroke-width="0.8"/>
+        </pattern>
+        <filter id="shadow">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="4" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.3"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background bar -->
+    <rect x="0" y="35" width="1400" height="50" fill="url(#bgGradient)"/>
+    <rect x="0" y="35" width="1400" height="50" fill="url(#pattern)"/>
+    
+    <!-- Badge with shadow -->
+    <g filter="url(#shadow)">
+        <!-- Badge background -->
+        <path d="M 620 15 L 780 15 Q 785 15 785 20 L 785 70 Q 785 85 770 95 Q 755 105 740 105 L 660 105 Q 645 105 630 95 Q 615 85 615 70 L 615 20 Q 615 15 620 15 Z" fill="url(#badgeGradient)"/>
+        
+        <!-- Saffron flower icon -->
+        <g transform="translate(745, 35)">
+            <!-- Petals -->
+            <path d="M 22.5 5 Q 22 7 21.5 12 Q 21.5 15 22.5 17 Q 23.5 15 23.5 12 Q 23 7 22.5 5 Z" fill="white" opacity="0.95"/>
+            <path d="M 17 8 Q 16.5 10 17 14 Q 18 17 20 18 Q 21 15 20.5 13 Q 19.5 10 18 8 Z" fill="white" opacity="0.95" transform="rotate(-15 19 13)"/>
+            <path d="M 28 8 Q 28.5 10 28 14 Q 27 17 25 18 Q 24 15 24.5 13 Q 25.5 10 27 8 Z" fill="white" opacity="0.95" transform="rotate(15 26 13)"/>
+            <path d="M 15 14 Q 14.5 15 15 18 Q 16 19 18.5 19 Q 19 16 18 15 Q 17 13 16 12 Z" fill="white" opacity="0.93" transform="rotate(-10 16.5 15)"/>
+            <path d="M 30 14 Q 30.5 15 30 18 Q 29 19 26.5 19 Q 26 16 27 15 Q 28 13 29 12 Z" fill="white" opacity="0.93" transform="rotate(10 28.5 15)"/>
+            <path d="M 20 15 Q 19 16 19.5 19 Q 20.5 20 22.5 20 Q 24.5 20 25.5 19 Q 26 16 25 15 Z" fill="white" opacity="0.94"/>
+            
+            <!-- Center -->
+            <circle cx="22.5" cy="16" r="2.5" fill="#FFFACD" opacity="0.9"/>
+            
+            <!-- Stigmas -->
+            <path d="M 21.5 16 Q 20.5 13 20 9" stroke="#DC143C" stroke-width="0.8" stroke-linecap="round" opacity="0.95"/>
+            <path d="M 22.5 16 Q 22.5 12 22.5 8" stroke="#DC143C" stroke-width="0.8" stroke-linecap="round" opacity="0.95"/>
+            <path d="M 23.5 16 Q 24.5 13 25 9" stroke="#DC143C" stroke-width="0.8" stroke-linecap="round" opacity="0.95"/>
+            
+            <!-- Stigma tips -->
+            <path d="M 20 9 Q 19.5 8.5 20 8 Q 20.5 8.5 20 9 Z" fill="#8B0000" opacity="0.95"/>
+            <path d="M 22.5 8 Q 22 7.5 22.5 7 Q 23 7.5 22.5 8 Z" fill="#8B0000" opacity="0.95"/>
+            <path d="M 25 9 Q 24.5 8.5 25 8 Q 25.5 8.5 25 9 Z" fill="#8B0000" opacity="0.95"/>
+            
+            <!-- Stem -->
+            <rect x="21.75" y="20" width="1.5" height="15" fill="white" opacity="0.85" rx="0.75"/>
+        </g>
+        
+        <!-- Text "Rezaie" -->
+        <text x="640" y="70" font-family="Georgia, serif" font-size="36" font-style="italic" font-weight="300" fill="white" letter-spacing="1">Rezaie</text>
+    </g>
+</svg>
