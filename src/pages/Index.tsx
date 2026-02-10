@@ -189,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Recent Products Slider */}
-      <section className="py-10 md:py-16 bg-background">
+      <section className="py-4 md:py-8 bg-background">
         <div className="section-container">
           <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Recent Products
