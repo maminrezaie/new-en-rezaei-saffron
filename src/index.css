@@ -87,6 +87,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, 'Times New Roman', serif;
   }
+
+  /* Persian text styling */
+  .font-persian {
+    font-family: 'Vazirmatn', 'B Nazanin', 'Tahoma', sans-serif;
+  }
 }
 
 @layer components {
