@@ -1,31 +1,30 @@
 
 
-# About Page Updates
+# Homepage, About Page, and Header Updates
 
-## Changes
+## 1. About Page: Replace storefront image
+- Save the uploaded image (`user-uploads://storefront2.png`) as `src/assets/shop-image.jpg` (overwrite existing)
+- Reduce image height with `max-h-[350px]` and `object-cover` to make it slightly shorter
 
-### 1. Add shop image
-Save the uploaded storefront photo to `src/assets/shop-image.jpg` and display it in the Hero section alongside the existing intro text (two-column layout on desktop, stacked on mobile).
+## 2. Homepage: Reduce spacing between Categories and Recent Products
+- Change the Categories section bottom padding from `pb-6 md:pb-8` to `pb-2 md:pb-3`
+- Reduce the Recent Products section top padding from `py-10 md:py-16` to `py-4 md:py-8`
 
-### 2. Change "Owner" to "Manager"
-Update the section heading from "About the Owner" to "About the Manager".
+## 3. Homepage: Bigger section titles
+- **"Why Choose Us"**: Increase heading from `text-base md:text-lg` to `text-2xl md:text-3xl`
+- **"Why Gonabad Rezaei Saffron"**: Change to **"Why Gonabad Saffron"** (remove "Rezaei") and increase heading from `text-base md:text-lg` to `text-2xl md:text-3xl`
 
-### 3. Add CV link
-Add a link to https://maminrezaie.github.io/ in the Manager section, styled as an inline text link (e.g., "View his CV").
-
-### 4. Add Persian Shop CTA at the bottom
-Add a new section at the very bottom of the page with a call-to-action linking to the Persian store (https://rezaei-saffron.ir), mentioning "up to date prices". Styled as an accent banner similar to the existing "Our Commitment" section.
+## 4. Header: Add Arabic and Kurdish language flags
+- Add two flag links after the Persian store pill in both desktop and mobile nav:
+  - Iraqi flag (for Arabic): links to `https://rezaei-saffron.ir/Arabic/`
+  - Kurdish flag (Kurdistan): links to `https://rezaei-saffron.ir/Kurdish/`
+- Styled as small circular flag buttons next to the existing Persian store link
 
 ## Technical Details
 
-### File: `src/pages/About.tsx`
-- Import the shop image from `@/assets/shop-image.jpg`
-- Restructure Hero section into a two-column layout: text left, shop image right
-- Line 39: Change "About the Owner" to "About the Manager"
-- Line 36 comment: Update to match
-- Add CV link after the manager description paragraph
-- Add new CTA section after "Our Commitment" with a button linking to `https://rezaei-saffron.ir`
-
-### New asset
-- Copy `user-uploads://image-2.png` to `src/assets/shop-image.jpg`
+### Files changed:
+- `src/assets/shop-image.jpg` -- replaced with new storefront image
+- `src/pages/About.tsx` -- add `max-h-[350px]` to the image
+- `src/pages/Index.tsx` -- reduce spacing, enlarge headings, rename section
+- `src/components/Header.tsx` -- add Arabic (🇮🇶) and Kurdish flag links in both desktop and mobile nav menus
 
