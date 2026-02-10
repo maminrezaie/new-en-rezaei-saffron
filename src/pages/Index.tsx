@@ -28,6 +28,8 @@ const categories = [
   { name: "Dried Fruits", image: driedFruitsCategory, link: "/products" },
 ];
 
+const allProducts = productSections.flatMap((s) => s.products);
+
 const featuredProducts = [
   { name: "Khatam Negin Saffron Pack", weight: "4.608g", image: giftCategory, hoverImage: khatamNeginSecond },
   { name: "Bunch Saffron دخترپیچ", weight: "4.608g", image: bunchPack, hoverImage: bunchBulk2 },
