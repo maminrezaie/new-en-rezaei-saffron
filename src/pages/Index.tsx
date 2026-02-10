@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { ChevronLeft, ChevronRight, Sprout, Award, Globe, ShieldCheck } from "lucide-react";
+import { productSections, type Product } from "@/data/products";
 import heroBanner from "@/assets/hero-banner.jpg";
 import neginCategory from "@/assets/negin-category.png";
 import bunchCategory from "@/assets/bunch-saffron-category.png";
@@ -26,6 +28,8 @@ const categories = [
   { name: "Dried Fruits", image: driedFruitsCategory, link: "/products" },
 ];
 
+const allProducts = productSections.flatMap((s) => s.products);
+
 const featuredProducts = [
   { name: "Khatam Negin Saffron Pack", weight: "4.608g", image: giftCategory, hoverImage: khatamNeginSecond },
   { name: "Bunch Saffron دخترپیچ", weight: "4.608g", image: bunchPack, hoverImage: bunchBulk2 },
@@ -36,6 +40,35 @@ const featuredProducts = [
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const recentRef = useRef<HTMLDivElement>(null);
+  const recentIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const scrollRecent = useCallback((dir: number) => {
+    const el = recentRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild ? (el.firstElementChild as HTMLElement).offsetWidth + 12 : 200;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    const nextPos = el.scrollLeft + dir * cardWidth;
+    if (nextPos > maxScroll) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (nextPos < 0) {
+      el.scrollTo({ left: maxScroll, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+    }
+  }, []);
+
+  // Auto-slide for recent products
+  useEffect(() => {
+    recentIntervalRef.current = setInterval(() => scrollRecent(1), 5000);
+    return () => { if (recentIntervalRef.current) clearInterval(recentIntervalRef.current); };
+  }, [scrollRecent]);
+
+  const handleRecentArrow = (dir: number) => {
+    if (recentIntervalRef.current) clearInterval(recentIntervalRef.current);
+    scrollRecent(dir);
+    recentIntervalRef.current = setInterval(() => scrollRecent(1), 5000);
+  };
 
   // Auto-slide for featured products
   useEffect(() => {
@@ -153,6 +186,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Recent Products Slider */}
+      <section className="py-10 md:py-16 bg-background">
+        <div className="section-container">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+            Recent Products
+          </h2>
+          <p className="text-center text-muted-foreground mb-6 text-sm">
+            Browse our latest saffron and specialty products
+          </p>
+          <div className="relative">
+            <button
+              onClick={() => handleRecentArrow(-1)}
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+            <div
+              ref={recentRef}
+              className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6"
+            >
+              {allProducts.map((product) => (
+                <RecentProductCard key={product.name} product={product} />
+              ))}
+            </div>
+            <button
+              onClick={() => handleRecentArrow(1)}
+              className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products - Auto-sliding */}
       <section className="py-10 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -194,6 +263,31 @@ const Index = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Why Choose Us */}
+      <section className="py-12 md:py-20 bg-background">
+        <div className="section-container">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+            Why Choose Us
+          </h2>
+          <p className="text-center text-muted-foreground mb-8 text-sm">
+            Quality and trust at every step
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: Sprout, title: "Farm-Direct Supply", desc: "Sourced directly from Gonabad farms, no middlemen" },
+              { icon: Award, title: "Export-Grade Quality", desc: "Premium Negin saffron with verified purity and grading" },
+              { icon: Globe, title: "Global Shipping", desc: "Reliable delivery to customers worldwide" },
+              { icon: ShieldCheck, title: "Money-Back Guarantee", desc: "Full refund if you're not satisfied with the quality" },
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-sm">
+                <item.icon className="w-8 h-8 text-accent mb-3" />
+                <h3 className="font-serif text-foreground font-semibold text-sm mb-2">{item.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -254,6 +348,51 @@ const Index = () => {
     </div>
   );
 };
+
+const RecentProductCard = ({ product }: { product: Product }) => (
+  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full flex-shrink-0 w-[calc(33.333%-8px)] md:w-[calc(20%-10px)] snap-start">
+    <div className="aspect-square overflow-hidden bg-muted relative group">
+      <img
+        src={product.images[0]}
+        alt={product.name}
+        className={`w-full h-full object-cover transition-opacity duration-500 ${product.images.length > 1 ? "group-hover:opacity-0" : ""}`}
+        loading="lazy"
+      />
+      {product.images.length > 1 && (
+        <img
+          src={product.images[1]}
+          alt={`${product.name} - alternate view`}
+          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          loading="lazy"
+        />
+      )}
+    </div>
+    <div className="p-3 md:p-5 flex flex-col flex-1 items-center text-center gap-2 md:gap-4">
+      <h3 className="font-serif text-foreground font-semibold text-xs md:text-sm line-clamp-2">
+        {product.name}
+      </h3>
+      <div className="mt-auto flex flex-col items-center gap-2 md:gap-4 w-full">
+        <div className="flex items-center justify-center gap-2 text-xs md:text-sm">
+          {product.weight && (
+            <>
+              <span className="font-bold text-destructive">{product.weight}</span>
+              <span className="text-muted-foreground">|</span>
+            </>
+          )}
+          <span className="text-accent font-semibold text-sm md:text-lg">
+            {product.price ?? "Contact for Price"}
+          </span>
+        </div>
+        <Link
+          to="/contact"
+          className="inline-block w-full text-center px-3 py-2 bg-destructive text-destructive-foreground rounded-md text-xs md:text-sm font-medium hover:brightness-90 transition-colors"
+        >
+          Inquire Now
+        </Link>
+      </div>
+    </div>
+  </div>
+);
 
 const ProductCard = ({ product }: { product: typeof featuredProducts[0] }) => (
   <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full">
