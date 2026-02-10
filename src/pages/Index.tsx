@@ -350,7 +350,7 @@ const Index = () => {
 };
 
 const RecentProductCard = ({ product }: { product: Product }) => (
-  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full flex-shrink-0 w-[calc(33.333%-8px)] md:w-[calc(20%-10px)] snap-start">
+  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col flex-shrink-0 w-[calc(33.333%-8px)] md:w-[calc(20%-10px)] snap-start">
     <div className="aspect-square overflow-hidden bg-muted relative group">
       <img
         src={product.images[0]}
