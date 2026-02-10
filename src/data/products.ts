@@ -59,7 +59,7 @@ export const productSections: ProductSection[] = [
         shortDescription: "One mesqal (4.6g) of white saffron root. Boosts immunity, appetite, and adds flavor to food and drinks.",
         description: "Fresh saffron root from the current harvest. Strengthens the immune system, boosts appetite and energy, and adds a delicate saffron flavor and aroma to food and beverages. A natural and affordable way to enjoy saffron benefits.",
         weight: "4.6g",
-        price: null,
+        price: "$2.00",
         images: [
           "https://rezaei-saffron.ir/wp-content/uploads/2025/12/sefid3.png",
         ],
