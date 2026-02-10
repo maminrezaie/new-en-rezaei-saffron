@@ -67,7 +67,12 @@ const Header = () => {
                 className="w-7 h-7 rounded-full flex items-center justify-center text-lg hover:opacity-70 transition-opacity"
                 aria-label="Arabic version"
               >
-                🇮🇶
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
+                  <rect width="60" height="13.33" fill="#CE1126"/>
+                  <rect y="13.33" width="60" height="13.34" fill="#fff"/>
+                  <rect y="26.67" width="60" height="13.33" fill="#000"/>
+                  <text x="30" y="24" textAnchor="middle" fill="#007A3D" fontSize="8" fontFamily="serif">الله أكبر</text>
+                </svg>
               </a>
               <span className="text-xs">/</span>
               <a
@@ -131,7 +136,12 @@ const Header = () => {
                   className="w-8 h-8 rounded-full flex items-center justify-center text-lg hover:opacity-70 transition-opacity"
                   aria-label="Arabic version"
                 >
-                  🇮🇶
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
+                    <rect width="60" height="13.33" fill="#CE1126"/>
+                    <rect y="13.33" width="60" height="13.34" fill="#fff"/>
+                    <rect y="26.67" width="60" height="13.33" fill="#000"/>
+                    <text x="30" y="24" textAnchor="middle" fill="#007A3D" fontSize="8" fontFamily="serif">الله أكبر</text>
+                  </svg>
                 </a>
                 <span className="text-xs">/</span>
                 <a
