@@ -16,7 +16,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Mobile: WhatsApp icon */}
