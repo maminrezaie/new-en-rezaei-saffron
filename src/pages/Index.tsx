@@ -271,7 +271,7 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-12 md:py-20 bg-background">
         <div className="section-container">
-          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+          <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
             Why Choose Us
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-sm">
