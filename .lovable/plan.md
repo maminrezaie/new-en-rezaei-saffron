@@ -1,67 +1,31 @@
 
 
-# Add Two New Sections to the Homepage
+# About Page Updates
 
-## Overview
-Add a "Recent Products" auto-sliding section and a "Why Choose Us" trust section to the homepage.
+## Changes
 
----
+### 1. Add shop image
+Save the uploaded storefront photo to `src/assets/shop-image.jpg` and display it in the Hero section alongside the existing intro text (two-column layout on desktop, stacked on mobile).
 
-## Section 1: Recent Products Slider
+### 2. Change "Owner" to "Manager"
+Update the section heading from "About the Owner" to "About the Manager".
 
-**Placement**: Between the Categories slider and the Featured Products section.
+### 3. Add CV link
+Add a link to https://maminrezaie.github.io/ in the Manager section, styled as an inline text link (e.g., "View his CV").
 
-**Behavior**:
-- Shows all 10 products from `src/data/products.ts` in a horizontal slider
-- Auto-slides every 5 seconds
-- 5 visible columns on desktop, 3 on mobile
-- Edge-hugging navigation arrows (left/right)
-- Uses the same card style as the Products page (center-aligned text, weight in bold red, price enlarged, weight | price on one line, hover image swap, "Inquire Now" button)
-
-**Implementation**:
-- Import `productSections` from `src/data/products.ts` and flatten into a single array
-- Build a horizontal scrollable container with `snap-x` behavior
-- Each card uses `flex-shrink-0` with width `w-1/3` (mobile) / `w-1/5` (desktop)
-- Nav arrows positioned at the outer edges of the container (flush with the section boundary)
-- Auto-scroll interval at 5s, resets on manual arrow click
-
----
-
-## Section 2: Why Choose Us
-
-**Placement**: Between the Recent Products slider and the About Banner section.
-
-**Design**: A clean grid of 4 trust points with icons, styled to match the luxury aesthetic.
-
-Trust points:
-1. **Farm-Direct Supply** -- "Sourced directly from Gonabad farms, no middlemen"
-2. **Export-Grade Quality** -- "Premium Negin saffron with verified purity and grading"
-3. **Global Shipping** -- "Reliable delivery to customers worldwide"
-4. **Money-Back Guarantee** -- "Full refund if you're not satisfied with the quality"
-
-Layout: 2x2 grid on mobile, 4 columns on desktop. Each card has a Lucide icon, title, and short description, center-aligned.
-
----
+### 4. Add Persian Shop CTA at the bottom
+Add a new section at the very bottom of the page with a call-to-action linking to the Persian store (https://rezaei-saffron.ir), mentioning "up to date prices". Styled as an accent banner similar to the existing "Our Commitment" section.
 
 ## Technical Details
 
-### File changed: `src/pages/Index.tsx`
-- Import `productSections` from `@/data/products.ts`
-- Flatten products into `allProducts` array
-- Add the Recent Products slider section with:
-  - A scroll container with `useRef` and `useEffect` for 5s auto-scroll
-  - Manual arrow buttons at container edges
-  - Product cards matching the Products page `ProductCard` component style
-- Add the Why Choose Us section with:
-  - Lucide icons (`Sprout`, `Award`, `Globe`, `ShieldCheck`)
-  - 4-column responsive grid
-- No new files or dependencies needed
+### File: `src/pages/About.tsx`
+- Import the shop image from `@/assets/shop-image.jpg`
+- Restructure Hero section into a two-column layout: text left, shop image right
+- Line 39: Change "About the Owner" to "About the Manager"
+- Line 36 comment: Update to match
+- Add CV link after the manager description paragraph
+- Add new CTA section after "Our Commitment" with a button linking to `https://rezaei-saffron.ir`
 
-### Updated homepage section order:
-1. Hero Banner
-2. Categories Slider
-3. **Recent Products Slider (new)**
-4. Featured Products
-5. **Why Choose Us (new)**
-6. About Banner (Rezaei Saffron -- Since 2012)
+### New asset
+- Copy `user-uploads://image-2.png` to `src/assets/shop-image.jpg`
 
