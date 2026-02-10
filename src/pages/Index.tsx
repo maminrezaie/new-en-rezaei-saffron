@@ -186,6 +186,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Recent Products Slider */}
+      <section className="py-10 md:py-16 bg-background">
+        <div className="section-container">
+          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+            Recent Products
+          </h2>
+          <p className="text-center text-muted-foreground mb-6 text-sm">
+            Browse our latest saffron and specialty products
+          </p>
+          <div className="relative">
+            <button
+              onClick={() => handleRecentArrow(-1)}
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 text-foreground" />
+            </button>
+            <div
+              ref={recentRef}
+              className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6"
+            >
+              {allProducts.map((product) => (
+                <RecentProductCard key={product.name} product={product} />
+              ))}
+            </div>
+            <button
+              onClick={() => handleRecentArrow(1)}
+              className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products - Auto-sliding */}
       <section className="py-10 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0">
