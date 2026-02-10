@@ -16,7 +16,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm shadow-sm">
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Mobile: WhatsApp icon */}
@@ -54,9 +54,9 @@ const Header = () => {
               href="https://rezaei-saffron.ir"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border border-accent text-accent rounded-full text-sm font-medium hover:bg-accent hover:text-card transition-colors"
-            >
-              🇮🇷 فروشگاه فارسی
+               className="px-4 py-2 border border-muted-foreground/40 rounded-full text-sm font-medium hover:bg-muted transition-colors"
+             >
+               <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
             </a>
           </nav>
 
@@ -92,9 +92,9 @@ const Header = () => {
                 href="https://rezaei-saffron.ir"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-4 mt-2 px-4 py-3 border border-accent text-accent rounded-full text-sm font-medium text-center hover:bg-accent hover:text-card transition-colors"
+                className="mx-4 mt-2 px-4 py-3 border border-muted-foreground/40 rounded-full text-sm font-medium text-center hover:bg-muted transition-colors"
               >
-                🇮🇷 فروشگاه فارسی
+                <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
               </a>
             </div>
           </nav>

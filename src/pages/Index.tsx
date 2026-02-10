@@ -37,6 +37,7 @@ const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  // Auto-slide for featured products
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
@@ -44,6 +45,22 @@ const Index = () => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
+  }, []);
+
+  // Auto-slide for categories
+  useEffect(() => {
+    const catInterval = setInterval(() => {
+      const el = document.getElementById('cat-slider');
+      if (el) {
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (el.scrollLeft >= maxScroll - 10) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          el.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }
+    }, 5000);
+    return () => clearInterval(catInterval);
   }, []);
 
   return (
@@ -66,9 +83,9 @@ const Index = () => {
               <span className="text-primary">Saffron</span>
             </h1>
             <p className="text-sm md:text-base mb-5 opacity-90 leading-relaxed">
-              Buy directly from the farmers of Khorasan province, Iran
+              Buy directly from the farmers of Gonabad, Khorasan
             </p>
-            <p className="text-xs md:text-sm opacity-80 italic">
+            <p className="text-xs md:text-sm text-dark underline font-medium">
               Endorsed by UN Food & Agriculture Org
             </p>
           </div>
@@ -76,56 +93,72 @@ const Index = () => {
       </section>
 
       {/* Categories Slider */}
-      <section className="pt-8 pb-16 md:pb-24 bg-background">
+      <section className="pt-10 pb-16 md:pb-24 bg-background">
         <div className="section-container">
-          <h2 className="text-xl md:text-2xl font-serif text-center text-primary mb-1">
+          <h2 className="text-lg md:text-xl font-serif text-center text-primary mb-1">
             Our Categories
           </h2>
-          <p className="text-center text-muted-foreground mb-5 max-w-2xl mx-auto text-sm">
+          <p className="text-center text-muted-foreground mb-3 max-w-2xl mx-auto text-sm">
             Explore our range of premium saffron varieties and dried fruits
           </p>
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-            {categories.map((cat) => (
-              <Link
-                key={cat.name}
-                to={cat.link}
-                className="group relative overflow-hidden rounded-lg aspect-[4/3] card-hover flex-shrink-0 w-[80%] sm:w-[45%] md:w-[30%] snap-start"
-              >
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-card font-serif text-sm md:text-base font-semibold">
-                    {cat.name}
-                  </h3>
-                </div>
-              </Link>
-            ))}
+          <div className="relative">
+            <button
+              onClick={() => {
+                const el = document.getElementById('cat-slider');
+                if (el) el.scrollBy({ left: -300, behavior: 'smooth' });
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Previous"
+            >
+              ‹
+            </button>
+            <div id="cat-slider" className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-6">
+              {categories.map((cat) => (
+                <Link
+                  key={cat.name}
+                  to={cat.link}
+                  className="group relative overflow-hidden rounded-lg aspect-[4/3] card-hover flex-shrink-0 w-[80%] sm:w-[45%] md:w-[30%] snap-start"
+                >
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-card font-serif text-sm md:text-base font-semibold">
+                      {cat.name}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <button
+              onClick={() => {
+                const el = document.getElementById('cat-slider');
+                if (el) el.scrollBy({ left: 300, behavior: 'smooth' });
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-card/80 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-card transition-colors"
+              aria-label="Next"
+            >
+              ›
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Arrow Divider */}
-      <div className="flex justify-center -mb-px">
-        <svg width="60" height="30" viewBox="0 0 60 30" className="text-primary fill-current">
-          <polygon points="0,0 60,0 30,30" />
-        </svg>
-      </div>
-
       {/* Featured Products - Auto-sliding */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section className="py-10 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={featuredBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-dark/40" />
         </div>
         <div className="section-container relative z-10">
           <h2 className="text-3xl md:text-4xl font-serif text-center mb-4 text-primary-foreground">
             Featured Products
           </h2>
-          <p className="text-center text-primary-foreground/80 mb-10">
+          <p className="text-center text-primary-foreground/80 mb-6">
             Handpicked selections from our finest collection
           </p>
 
@@ -234,13 +267,13 @@ const ProductCard = ({ product }: { product: typeof featuredProducts[0] }) => (
       />
     </div>
     <div className="p-4 flex flex-col flex-1">
-      <h3 className="font-serif text-foreground font-semibold mb-1 text-sm md:text-base">
+      <h3 className="font-serif text-foreground font-semibold mb-3 text-sm md:text-base">
         {product.name}
       </h3>
       {product.weight && (
-        <p className="text-xs text-muted-foreground mb-2">{product.weight}</p>
+        <p className="text-xs text-muted-foreground mb-3">{product.weight}</p>
       )}
-      <p className="text-xs text-accent font-medium mb-3">Contact for Price</p>
+      <p className="text-xs text-accent font-medium mb-4">Contact for Price</p>
       <div className="mt-auto">
         <Link
           to="/contact"

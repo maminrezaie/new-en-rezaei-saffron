@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo-gold.png";
+import saffronDivider from "@/assets/saffron-divider.png";
 
 
 const InstagramIcon = () => (
@@ -25,17 +26,8 @@ const Footer = () => {
   return (
     <footer>
       {/* Ornamental divider */}
-      <div className="w-full overflow-hidden">
-        <svg viewBox="0 0 1200 60" className="w-full h-auto" preserveAspectRatio="none">
-          <rect width="1200" height="4" y="28" fill="hsl(0, 68%, 32%)" />
-          <circle cx="600" cy="30" r="18" fill="hsl(0, 68%, 32%)" />
-          <circle cx="600" cy="30" r="12" fill="hsl(44, 54%, 54%)" />
-          <ellipse cx="600" cy="30" rx="6" ry="4" fill="hsl(0, 68%, 32%)" />
-          <circle cx="540" cy="30" r="4" fill="hsl(44, 54%, 54%)" />
-          <circle cx="660" cy="30" r="4" fill="hsl(44, 54%, 54%)" />
-          <circle cx="500" cy="30" r="2.5" fill="hsl(0, 68%, 32%)" />
-          <circle cx="700" cy="30" r="2.5" fill="hsl(0, 68%, 32%)" />
-        </svg>
+      <div className="w-full">
+        <img src={saffronDivider} alt="" className="w-full h-auto" />
       </div>
 
       <div className="bg-dark text-cream">
