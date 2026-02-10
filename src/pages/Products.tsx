@@ -1,66 +1,48 @@
 import { Link } from "react-router-dom";
-import bunchPack from "@/assets/bunch-saffron-pack.png";
-import bunchBulk from "@/assets/bunch-saffron-bulk.png";
-import neginCategory from "@/assets/negin-category.png";
-import giftCategory from "@/assets/gift-saffron-category.png";
-
-interface Product {
-  name: string;
-  weight?: string;
-  image: string;
-}
+import { productSections, type Product } from "@/data/products";
 
 const ProductCard = ({ product }: { product: Product }) => (
-  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover">
-    <div className="aspect-square overflow-hidden bg-muted">
+  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full">
+    <div className="aspect-square overflow-hidden bg-muted relative group">
       <img
-        src={product.image}
+        src={product.images[0]}
         alt={product.name}
-        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        className={`w-full h-full object-cover transition-opacity duration-500 ${product.images.length > 1 ? "group-hover:opacity-0" : ""}`}
         loading="lazy"
       />
-    </div>
-    <div className="p-5">
-      <h3 className="font-serif text-foreground font-semibold mb-1">{product.name}</h3>
-      {product.weight && (
-        <p className="text-sm text-muted-foreground mb-3">{product.weight}</p>
+      {product.images.length > 1 && (
+        <img
+          src={product.images[1]}
+          alt={`${product.name} - alternate view`}
+          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          loading="lazy"
+        />
       )}
-      <p className="text-sm text-accent font-medium mb-4">Contact for Price</p>
-      <Link
-        to="/contact"
-        className="inline-block w-full text-center px-4 py-2.5 bg-destructive text-destructive-foreground rounded-md text-sm font-medium hover:bg-cta-red transition-colors"
-      >
-        Inquire Now
-      </Link>
+    </div>
+    <div className="p-4 flex flex-col flex-1">
+      <h3 className="font-serif text-foreground font-semibold mb-1 text-sm md:text-base">
+        {product.name}
+      </h3>
+      <p className="text-xs text-muted-foreground mb-2 line-clamp-2">
+        {product.shortDescription}
+      </p>
+      {product.weight && (
+        <p className="text-xs text-muted-foreground mb-2">{product.weight}</p>
+      )}
+      <p className="text-sm text-accent font-medium mb-4">
+        {product.price ?? "Contact for Price"}
+      </p>
+      <div className="mt-auto">
+        <Link
+          to="/contact"
+          className="inline-block w-full text-center px-4 py-2.5 bg-destructive text-destructive-foreground rounded-md text-sm font-medium hover:brightness-90 transition-colors"
+        >
+          Inquire Now
+        </Link>
+      </div>
     </div>
   </div>
 );
-
-const sections = [
-  {
-    id: "bunch",
-    title: "Bunch Saffron (Dokhtarpich)",
-    products: [
-      { name: "Bunch Saffron — Pack", weight: "4.6g", image: bunchPack },
-      { name: "Bunch Saffron — Bulk", image: bunchBulk },
-    ],
-  },
-  {
-    id: "root",
-    title: "Saffron Root",
-    products: [
-      { name: "Saffron Root — Bulk", image: neginCategory },
-    ],
-  },
-  {
-    id: "gift",
-    title: "Gift Saffron",
-    products: [
-      { name: "Gift Saffron — Round Tin", weight: "4.6g", image: giftCategory },
-      { name: "Gift Saffron — Wooden Gift Box", image: giftCategory },
-    ],
-  },
-];
 
 const Products = () => {
   return (
@@ -74,13 +56,13 @@ const Products = () => {
       </div>
 
       {/* Product Sections */}
-      {sections.map((section) => (
+      {productSections.map((section) => (
         <section key={section.id} id={section.id} className="py-8 md:py-12">
           <div className="section-container">
             <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-8 pb-3 border-b-2 border-accent inline-block">
               {section.title}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
               {section.products.map((product) => (
                 <ProductCard key={product.name} product={product} />
               ))}
