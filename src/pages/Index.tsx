@@ -133,7 +133,7 @@ const Index = () => {
       </section>
 
       {/* Categories Slider */}
-      <section className="pt-10 pb-6 md:pb-8 bg-background">
+      <section className="pt-10 pb-2 md:pb-3 bg-background">
         <div className="section-container">
           <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Our Categories
