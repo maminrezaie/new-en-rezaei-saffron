@@ -16,7 +16,7 @@ const About = () => {
             </p>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <img src={shopImage} alt="Rezaei Saffron storefront in Gonabad" className="w-full h-auto object-cover" />
+            <img src={shopImage} alt="Rezaei Saffron storefront in Gonabad" className="w-full max-h-[350px] object-cover" />
           </div>
         </div>
       </section>

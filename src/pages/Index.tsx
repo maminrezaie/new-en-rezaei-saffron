@@ -133,7 +133,7 @@ const Index = () => {
       </section>
 
       {/* Categories Slider */}
-      <section className="pt-10 pb-6 md:pb-8 bg-background">
+      <section className="pt-10 pb-2 md:pb-3 bg-background">
         <div className="section-container">
           <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Our Categories
@@ -189,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Recent Products Slider */}
-      <section className="py-10 md:py-16 bg-background">
+      <section className="py-4 md:py-8 bg-background">
         <div className="section-container">
           <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
             Recent Products
@@ -271,7 +271,7 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-12 md:py-20 bg-background">
         <div className="section-container">
-          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+          <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
             Why Choose Us
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-sm">
@@ -297,8 +297,8 @@ const Index = () => {
       {/* Why Gonabad Rezaei Saffron */}
       <section className="py-12 md:py-20 bg-muted">
         <div className="section-container">
-          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
-            Why Gonabad Rezaei Saffron
+          <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
+            Why Gonabad Saffron
           </h2>
           <p className="text-center text-muted-foreground mb-8 text-sm">
             A UNESCO-recognized heritage of excellence
