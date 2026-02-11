@@ -68,7 +68,7 @@ const Products = () => {
       </div>
 
       <div className="section-container">
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {allProducts.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}
