@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Star } from "lucide-react";
 import { productSections, type Product } from "@/data/products";
 
 const allProducts = productSections.flatMap((s) => s.products);
@@ -39,6 +40,11 @@ const ProductCard = ({ product }: { product: Product }) => (
           <span className="text-accent font-semibold text-base md:text-lg">
             {product.price ?? "Contact for Price"}
           </span>
+        </div>
+        <div className="flex justify-center gap-0.5 mb-1">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent fill-accent" />
+          ))}
         </div>
         <Link
           to="/contact"

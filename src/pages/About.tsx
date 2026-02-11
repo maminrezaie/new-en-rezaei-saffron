@@ -1,4 +1,4 @@
-import shopImage from "@/assets/shop-image.jpg";
+import shopImage from "@/assets/storefront3.png";
 import managerPortrait from "@/assets/manager-portrait.jpg";
 import PersianStoreCTA from "@/components/PersianStoreCTA";
 

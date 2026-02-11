@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Sprout, Award, Globe, ShieldCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sprout, Award, ShieldCheck, Star, FlaskConical, Leaf } from "lucide-react";
 import { productSections, type Product } from "@/data/products";
 import gonabadFields from "@/assets/gonabad-saffron-fields.png";
 import PersianStoreCTA from "@/components/PersianStoreCTA";
@@ -101,18 +101,18 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[32vh] md:min-h-[40vh] flex items-center mx-3 md:mx-6 mt-2 rounded-xl overflow-hidden">
+      <section className="relative min-h-[38vh] md:min-h-[46vh] flex items-center mx-3 md:mx-6 mt-2 rounded-xl overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBanner}
             alt="Premium Iranian Saffron"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark/70 via-dark/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/20 to-transparent" />
         </div>
         <div className="relative z-10 section-container text-card w-full">
           <div className="max-w-md ml-4 md:ml-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-2 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-2 leading-tight">
               <span className="bg-gradient-to-r from-gold to-light-gold bg-clip-text text-transparent">Premium</span>{" "}
               Iranian{" "}
               <span className="text-primary">Saffron</span>
@@ -277,11 +277,12 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-8 text-sm">
             Quality and trust at every step
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { icon: Sprout, title: "Farm-Direct Supply", desc: "Sourced directly from Gonabad farms, no middlemen" },
               { icon: Award, title: "Export-Grade Quality", desc: "Premium Negin saffron with verified purity and grading" },
-              { icon: Globe, title: "Global Shipping", desc: "Reliable delivery to customers worldwide" },
+              { icon: Leaf, title: "UN FAO Endorsed", desc: "Qanat-based saffron system recognized by the UN Food & Agriculture Organization" },
+              { icon: FlaskConical, title: "Lab-Tested Grade", desc: "Certified quality with laboratory testing and official grading certificates" },
               { icon: ShieldCheck, title: "Money-Back Guarantee", desc: "Full refund if you're not satisfied with the quality" },
             ].map((item) => (
               <div key={item.title} className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-sm">
@@ -433,6 +434,11 @@ const RecentProductCard = ({ product }: { product: Product }) => (
           <span className="text-accent font-semibold text-sm md:text-lg">
             {product.price ?? "Contact for Price"}
           </span>
+        </div>
+        <div className="flex justify-center gap-0.5 mb-1">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
+          ))}
         </div>
         <Link
           to="/contact"

@@ -59,12 +59,12 @@ const Header = () => {
              >
                <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
             </a>
-            <div className="flex items-center gap-1 text-muted-foreground">
+            <div className="flex items-center gap-0 text-muted-foreground">
               <a
                 href="https://rezaei-saffron.ir/Arabic/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full flex items-center justify-center text-lg hover:opacity-70 transition-opacity"
+                className="w-6 h-6 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                 aria-label="Arabic version"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
@@ -74,12 +74,12 @@ const Header = () => {
                   <text x="30" y="24" textAnchor="middle" fill="#007A3D" fontSize="8" fontFamily="serif">الله أكبر</text>
                 </svg>
               </a>
-              <span className="text-xs">/</span>
+              <span className="text-[10px] text-muted-foreground/50">/</span>
               <a
                 href="https://rezaei-saffron.ir/Kurdish/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                className="w-6 h-6 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                 aria-label="Kurdish version"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
@@ -128,12 +128,12 @@ const Header = () => {
               >
                 <span className="text-card">🇮🇷</span> <span className="text-primary">فروشگاه فارسی</span>
               </a>
-              <div className="flex justify-center items-center gap-1 mt-2 text-muted-foreground">
+              <div className="flex justify-center items-center gap-0 mt-2 text-muted-foreground">
                 <a
                   href="https://rezaei-saffron.ir/Arabic/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-lg hover:opacity-70 transition-opacity"
+                  className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                   aria-label="Arabic version"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
@@ -143,12 +143,12 @@ const Header = () => {
                     <text x="30" y="24" textAnchor="middle" fill="#007A3D" fontSize="8" fontFamily="serif">الله أكبر</text>
                   </svg>
                 </a>
-                <span className="text-xs">/</span>
+                <span className="text-[10px] text-muted-foreground/50">/</span>
                 <a
                   href="https://rezaei-saffron.ir/Kurdish/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                   aria-label="Kurdish version"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" className="w-5 h-5 rounded-full">
