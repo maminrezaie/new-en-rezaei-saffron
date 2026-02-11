@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /en/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /EN/index.html [L]
+RewriteRule . /en/index.html [L]
