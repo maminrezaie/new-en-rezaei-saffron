@@ -63,19 +63,19 @@ const XIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
-const SocialIcons = ({ className = "" }: { className?: string }) => (
+const SocialIcons = ({ className = "", iconSize = "w-3.5 h-3.5" }: { className?: string; iconSize?: string }) => (
   <div className={`flex items-center gap-2 ${className}`}>
     <a href="https://instagram.com/rezaei-saffron" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Instagram">
-      <InstagramIcon />
+      <InstagramIcon className={iconSize} />
     </a>
     <a href="https://t.me/+t12NMZ8XCBswNGVK" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Telegram">
-      <TelegramIcon />
+      <TelegramIcon className={iconSize} />
     </a>
     <a href="https://wa.me/qr/ERDSPOB6INRHP1" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="WhatsApp">
-      <WhatsAppIcon />
+      <WhatsAppIcon className={iconSize} />
     </a>
     <a href="https://x.com/aminReformist" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="X (Twitter)">
-      <XIcon />
+      <XIcon className={iconSize} />
     </a>
   </div>
 );
@@ -87,7 +87,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground">
+      <div className="bg-primary/80 text-primary-foreground">
         <div className="section-container relative flex items-center justify-center h-8 px-4">
           {/* Language flags - left (desktop) */}
           <div className="hidden md:flex items-center gap-1 absolute left-4">
