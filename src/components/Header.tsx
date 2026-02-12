@@ -47,11 +47,8 @@ const Header = () => {
     <header className="sticky top-0 z-50">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground">
-        <div className="section-container flex items-center justify-between h-8 px-4">
-          <span className="text-xs opacity-90">
-            Endorsed by UN Food &amp; Agriculture Org — FAO
-          </span>
-          <div className="hidden md:flex items-center gap-1">
+        <div className="section-container relative flex items-center justify-center h-8 px-4">
+          <div className="hidden md:flex items-center gap-1 absolute left-4">
             <a
               href="https://rezaei-saffron.ir/Arabic/"
               target="_blank"
@@ -80,6 +77,14 @@ const Header = () => {
               <TurkishFlag />
             </a>
           </div>
+          <a
+            href="https://www.fao.org/giahs/giahs-around-the-world/iran-qanat-based-saffron-system/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs opacity-90 hover:opacity-100 transition-opacity text-center"
+          >
+            Endorsed by UN Food &amp; Agriculture Org — FAO
+          </a>
         </div>
       </div>
 
