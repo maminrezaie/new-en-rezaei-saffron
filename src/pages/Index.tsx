@@ -21,6 +21,12 @@ import giftWoodenBoxSecond from "@/assets/gift-wooden-box-second.jpg";
 import featuredBg from "@/assets/featured-bg.jpg";
 import neginBulk from "@/assets/negin-bulk.png";
 import saffronRootBulk from "@/assets/saffron-root-bulk.jpg";
+import bulkNegin1 from "@/assets/bulk-negin-1.jpg";
+import bulkRoot1 from "@/assets/bulk-root-1.png";
+import trustEnamad from "@/assets/trust-enamad.png";
+import trustTipax from "@/assets/trust-tipax.png";
+import trustPostIr from "@/assets/trust-post-ir.png";
+import trustZarinpal from "@/assets/trust-zarinpal.png";
 
 const categories = [
   { name: "Negin Saffron", image: neginCategory, link: "/products#bunch" },
@@ -40,8 +46,8 @@ const featuredProducts = [
   { name: "Gift Saffron Wooden Box", weight: "", image: giftWoodenBox, hoverImage: giftWoodenBoxSecond },
 ];
 
-const bulkNeginImages = [neginBulk, neginKiloSecond];
-const bulkRootImages = [saffronRootBulk, gonabadFields];
+const bulkNeginImages = [bulkNegin1, neginBulk];
+const bulkRootImages = [bulkRoot1, saffronRootBulk];
 
 const BulkImageCard = ({ images, alt }: { images: string[]; alt: string }) => {
   const [hovered, setHovered] = useState(false);
@@ -319,7 +325,7 @@ const Index = () => {
       </section>
 
       {/* Bulk Saffron Purchase */}
-      <section className="py-12 md:py-20 bg-muted">
+      <section className="py-8 md:py-20 bg-muted">
         <div className="section-container">
           <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
             Bulk Saffron Purchase
@@ -368,19 +374,19 @@ const Index = () => {
           {/* Contact Strip */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-4">
-              <a href="tel:+989150616788" className="flex items-center gap-2 text-sm text-foreground hover:text-accent transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-                <span>Call</span>
+              <a href="tel:+989150616788" className="flex flex-col items-center gap-1 text-foreground hover:text-accent transition-colors">
+                <Phone className="w-10 h-10 text-primary" />
+                <span className="text-xs">Call</span>
               </a>
-              <a href="https://wa.me/qr/ERDSPOB6INRHP1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-foreground hover:text-accent transition-colors">
-                <svg className="w-5 h-5 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
+              <a href="https://wa.me/qr/ERDSPOB6INRHP1" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-foreground hover:text-accent transition-colors">
+                <svg className="w-10 h-10 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                <span>WhatsApp</span>
+                <span className="text-xs">WhatsApp</span>
               </a>
-              <a href="mailto:info@rezaei-saffron.ir" className="flex items-center gap-2 text-sm text-foreground hover:text-accent transition-colors">
-                <Mail className="w-5 h-5 text-primary" />
-                <span>Email</span>
+              <a href="mailto:info@rezaei-saffron.ir" className="flex flex-col items-center gap-1 text-foreground hover:text-accent transition-colors">
+                <Mail className="w-10 h-10 text-primary" />
+                <span className="text-xs">Email</span>
               </a>
             </div>
           </div>
@@ -467,7 +473,7 @@ const Index = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {/* Enamad */}
             <a referrerPolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=704029&Code=jtK72VeurNpOtvdBCXRoOxgOF2Uk9GSd" className="hover:opacity-80 transition-opacity">
-              <img referrerPolicy="origin" src="https://trustseal.enamad.ir/logo.aspx?id=704029&Code=jtK72VeurNpOtvdBCXRoOxgOF2Uk9GSd" alt="Enamad Trust Seal" className="h-16 w-auto" />
+              <img src={trustEnamad} alt="Enamad Trust Seal" className="h-16 w-auto" />
             </a>
             {/* Emalls */}
             <a href="https://emalls.ir/Shop/74549/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
@@ -479,19 +485,16 @@ const Index = () => {
               <span className="text-xs text-muted-foreground">Torob</span>
             </a>
             {/* Tipax */}
-            <a href="https://tipax.ir" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src="https://www.tipax.ir/favicon.ico" alt="Tipax Courier" className="h-10 w-10 rounded" />
-              <span className="text-xs text-muted-foreground">Tipax</span>
+            <a href="https://tipax.ir" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <img src={trustTipax} alt="Tipax Courier" className="h-14 w-auto" />
             </a>
             {/* Post.ir */}
-            <a href="https://post.ir" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src="https://www.post.ir/favicon.ico" alt="Iran Post" className="h-10 w-10 rounded" />
-              <span className="text-xs text-muted-foreground">Iran Post</span>
+            <a href="https://post.ir" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <img src={trustPostIr} alt="Iran Post" className="h-14 w-auto" />
             </a>
             {/* Zarinpal */}
-            <a href="https://zarinpal.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src="https://cdn.zarinpal.com/brand/icons/favicon-32x32.png" alt="Zarinpal" className="h-10 w-10 rounded" />
-              <span className="text-xs text-muted-foreground">Zarinpal</span>
+            <a href="https://zarinpal.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <img src={trustZarinpal} alt="Zarinpal" className="h-14 w-auto" />
             </a>
             {/* USDT */}
             <div className="flex flex-col items-center gap-1">
