@@ -84,6 +84,29 @@ const About = () => {
         </div>
       </section>
 
+      {/* Google Maps */}
+      <section className="py-16">
+        <div className="section-container max-w-3xl">
+          <h2 className="text-3xl font-serif text-foreground mb-6">Our Location</h2>
+          <div className="rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.5!2d58.6836!3d34.3528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzEwLjEiTiA1OMKwNDEnMDEuMCJF!5e0!3m2!1sen!2s!4v1700000000000"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Rezaei Saffron Location - Isar 1 (Imam Sadeq Street), Gonabad"
+              className="rounded-lg"
+            />
+            <p className="text-sm text-muted-foreground mt-3 text-center">
+              📍 Isar 1 (Imam Sadeq Street / ایثار ۱), Gonabad, Razavi Khorasan, Iran
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Persian Shop CTA */}
       <PersianStoreCTA />
     </div>

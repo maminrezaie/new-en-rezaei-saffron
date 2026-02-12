@@ -42,12 +42,6 @@ const Footer = () => {
                 Premium Iranian saffron and dried fruits, sourced directly from the farms of Gonabad, Khorasan. 
                 Registered quality, pure tradition since 2012.
               </p>
-              {/* Enamad Trust Seal */}
-              <div className="mt-4">
-                <a referrerPolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=704029&Code=jtK72VeurNpOtvdBCXRoOxgOF2Uk9GSd">
-                  <img referrerPolicy="origin" src="https://trustseal.enamad.ir/logo.aspx?id=704029&Code=jtK72VeurNpOtvdBCXRoOxgOF2Uk9GSd" alt="Enamad Trust Seal" className="h-16 w-auto cursor-pointer" />
-                </a>
-              </div>
             </div>
 
             {/* Quick Links */}

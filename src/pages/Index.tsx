@@ -19,7 +19,6 @@ import bunchBulk2 from "@/assets/bunch-saffron-bulk-2.png";
 import neginKiloSecond from "@/assets/negin-kilo-second.png";
 import giftWoodenBoxSecond from "@/assets/gift-wooden-box-second.jpg";
 import featuredBg from "@/assets/featured-bg.jpg";
-import shopImage from "@/assets/shop-image.jpg";
 import neginBulk from "@/assets/negin-bulk.png";
 import saffronRootBulk from "@/assets/saffron-root-bulk.jpg";
 
@@ -40,6 +39,35 @@ const featuredProducts = [
   { name: "Negin Saffron", weight: "1 Kilo", image: neginCategory, hoverImage: neginKiloSecond },
   { name: "Gift Saffron Wooden Box", weight: "", image: giftWoodenBox, hoverImage: giftWoodenBoxSecond },
 ];
+
+const bulkNeginImages = [neginBulk, neginKiloSecond];
+const bulkRootImages = [saffronRootBulk, gonabadFields];
+
+const BulkImageCard = ({ images, alt }: { images: string[]; alt: string }) => {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      className="aspect-[4/3] overflow-hidden relative"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <img
+        src={images[0]}
+        alt={alt}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${hovered ? "opacity-0" : "opacity-100"}`}
+        loading="lazy"
+      />
+      {images[1] && (
+        <img
+          src={images[1]}
+          alt={`${alt} - alternate`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${hovered ? "opacity-100" : "opacity-0"}`}
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+};
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,7 +128,7 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[38vh] md:min-h-[46vh] flex items-center md:items-center mx-3 md:mx-6 mt-2 rounded-xl overflow-hidden">
+      <section className="relative min-h-[32vh] md:min-h-[46vh] flex items-center md:items-center mx-3 md:mx-6 mt-2 rounded-xl overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBanner}
@@ -109,16 +137,20 @@ const Index = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-dark/5 to-transparent" />
         </div>
-        <div className="relative z-10 section-container text-card w-full flex flex-col h-full min-h-[38vh] md:min-h-0 justify-end md:justify-center pb-6 md:pb-0">
+        <div className="relative z-10 section-container text-card w-full flex flex-col h-full min-h-[32vh] md:min-h-0 justify-start pt-6 md:justify-center md:pt-0 pb-0 md:pb-0">
           <div className="max-w-md ml-4 md:ml-8">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-2 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-serif font-bold mb-1 md:mb-2 leading-tight tracking-tight">
               <span className="bg-gradient-to-r from-gold to-light-gold bg-clip-text text-transparent">Premium</span>{" "}
               Iranian{" "}
               <span className="text-primary">Saffron</span>
             </h1>
-            <p className="text-sm md:text-base mb-5 opacity-90 leading-relaxed">
-              Buy directly from the farmers of Gonabad, Khorasan
+            <p className="text-xs md:text-base opacity-90 leading-snug md:leading-relaxed">
+              Buy directly from the farmers of Gonabad, Khorasan, Iran
             </p>
+          </div>
+          {/* Mobile bottom text */}
+          <div className="mt-auto pb-3 md:hidden ml-4">
+            <p className="text-[10px] opacity-70">Direct from farm to your table</p>
           </div>
         </div>
       </section>
@@ -298,9 +330,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Negin Saffron Bulk */}
             <div className="bg-card rounded-lg overflow-hidden shadow-md">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={neginBulk} alt="Negin Saffron Bulk" className="w-full h-full object-cover" loading="lazy" />
-              </div>
+              <BulkImageCard images={bulkNeginImages} alt="Negin Saffron Bulk" />
               <div className="p-6">
                 <h3 className="font-serif text-foreground text-lg font-semibold mb-2">Negin Saffron — Grade I</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -308,30 +338,28 @@ const Index = () => {
                   with no yellow or orange parts. It boasts the highest crocin content (coloring strength of 260+), 
                   intense aroma, and rich flavor. Classified as ISO 3632 Grade I, Negin saffron is the preferred 
                   choice for international buyers, chefs, and pharmaceutical applications.
+                  <br /><strong className="text-primary">Fresh — product of the current year's harvest.</strong>
                 </p>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-accent font-bold text-xl">~$1,020 / kg</span>
-                  <span className="text-xs text-muted-foreground">(based on 4.6g at $4.69)</span>
+                  <span className="text-accent font-bold text-xl">$1,300 / kg</span>
                 </div>
               </div>
             </div>
 
             {/* Root Saffron Bulk */}
             <div className="bg-card rounded-lg overflow-hidden shadow-md">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={saffronRootBulk} alt="White Saffron Root Bulk" className="w-full h-full object-cover" loading="lazy" />
-              </div>
+              <BulkImageCard images={bulkRootImages} alt="White Saffron Bulk" />
               <div className="p-6">
-                <h3 className="font-serif text-foreground text-lg font-semibold mb-2">White Saffron Root (Sefid)</h3>
+                <h3 className="font-serif text-foreground text-lg font-semibold mb-2">White Saffron</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   Saffron root (the white and yellow base of the stigma) is increasingly valued for its health benefits. 
                   Rich in antioxidants, it supports immune function, promotes relaxation, and is traditionally brewed 
                   as a calming herbal tea. It contains safranal and picrocrocin compounds that aid digestion 
                   and have anti-inflammatory properties — an affordable way to enjoy saffron's therapeutic benefits.
+                  <br /><strong className="text-primary">Fresh — product of the current year's harvest.</strong>
                 </p>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-accent font-bold text-xl">~$435 / kg</span>
-                  <span className="text-xs text-muted-foreground">(based on 4.6g at $2.00)</span>
+                  <span className="text-accent font-bold text-xl">$160 / kg</span>
                 </div>
               </div>
             </div>
@@ -355,12 +383,6 @@ const Index = () => {
                 <span>Email</span>
               </a>
             </div>
-            <Link
-              to="/contact"
-              className="px-6 py-2.5 bg-destructive text-destructive-foreground rounded-md text-sm font-medium hover:brightness-90 transition-colors"
-            >
-              Request Bulk Quote
-            </Link>
           </div>
         </div>
       </section>
@@ -414,7 +436,7 @@ const Index = () => {
       {/* About Banner */}
       <section className="py-16 md:py-24 bg-dark text-cream">
         <div className="section-container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif text-accent mb-6">
               Rezaei Saffron — Since 2012
             </h2>
@@ -430,44 +452,13 @@ const Index = () => {
               Learn More
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div className="rounded-lg overflow-hidden relative aspect-[4/3]">
-              <img
-                src={shopImage}
-                alt="Rezaei Saffron Shop in Gonabad"
-                className="w-full h-full object-cover object-bottom rounded-lg"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-dark/30 rounded-lg" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="font-serif text-card text-lg font-semibold">Our Shop in Gonabad</h3>
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.5!2d58.6836!3d34.3528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzEwLjEiTiA1OMKwNDEnMDEuMCJF!5e0!3m2!1sen!2s!4v1700000000000"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '300px' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Rezaei Saffron Location - Isar 1 (Imam Sadeq Street), Gonabad"
-                className="rounded-lg"
-              />
-              <p className="text-sm text-cream/70 mt-3 text-center">
-                📍 Isar 1 (Imam Sadeq Street / ایثار ۱), Gonabad, Razavi Khorasan, Iran
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Trust Seals & Payment */}
-      <section className="py-10 md:py-14 bg-background">
+      <section className="py-10 md:py-14 bg-white">
         <div className="section-container">
-          <h2 className="text-base md:text-lg font-serif text-center text-primary mb-1">
+          <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
             Trusted & Verified
           </h2>
           <p className="text-center text-muted-foreground mb-6 text-sm">
@@ -502,6 +493,20 @@ const Index = () => {
               <img src="https://cdn.zarinpal.com/brand/icons/favicon-32x32.png" alt="Zarinpal" className="h-10 w-10 rounded" />
               <span className="text-xs text-muted-foreground">Zarinpal</span>
             </a>
+            {/* USDT */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="h-10 w-10 rounded-full bg-[#26A17B] flex items-center justify-center">
+                <span className="text-white font-bold text-sm">₮</span>
+              </div>
+              <span className="text-xs text-muted-foreground">USDT</span>
+            </div>
+            {/* Iranicard */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="h-10 w-10 rounded bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                <span className="text-white font-bold text-[10px]">IC</span>
+              </div>
+              <span className="text-xs text-muted-foreground">Iranicard</span>
+            </div>
           </div>
         </div>
       </section>
@@ -512,55 +517,58 @@ const Index = () => {
   );
 };
 
-const RecentProductCard = ({ product }: { product: Product }) => (
-  <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(20%-10px)] snap-start">
-    <div className="aspect-square overflow-hidden bg-muted relative group">
-      <img
-        src={product.images[0]}
-        alt={product.name}
-        className={`w-full h-full object-cover transition-opacity duration-500 ${product.images.length > 1 ? "group-hover:opacity-0" : ""}`}
-        loading="lazy"
-      />
-      {product.images.length > 1 && (
+const RecentProductCard = ({ product }: { product: Product }) => {
+  const displayWeight = product.weight.replace(' grams', 'g').replace(' gram', 'g');
+  return (
+    <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(20%-10px)] snap-start">
+      <div className="aspect-square overflow-hidden bg-muted relative group">
         <img
-          src={product.images[1]}
-          alt={`${product.name} - alternate view`}
-          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          src={product.images[0]}
+          alt={product.name}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${product.images.length > 1 ? "group-hover:opacity-0" : ""}`}
           loading="lazy"
         />
-      )}
-    </div>
-    <div className="p-3 md:p-5 flex flex-col flex-1 items-center text-center gap-2 md:gap-4">
-      <h3 className="font-serif text-foreground font-semibold text-xs md:text-sm line-clamp-2">
-        {product.name}
-      </h3>
-      <div className="mt-auto flex flex-col items-center gap-2 md:gap-4 w-full">
-        <div className="flex items-center justify-center gap-2 text-xs md:text-sm">
-          {product.weight && (
-            <>
-              <span className="font-bold text-destructive">{product.weight}</span>
-              <span className="text-muted-foreground">|</span>
-            </>
-          )}
-          <span className="text-accent font-semibold text-sm md:text-lg">
-            {product.price ?? "Contact for Price"}
-          </span>
+        {product.images.length > 1 && (
+          <img
+            src={product.images[1]}
+            alt={`${product.name} - alternate view`}
+            className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            loading="lazy"
+          />
+        )}
+      </div>
+      <div className="p-3 md:p-5 flex flex-col flex-1 items-center text-center gap-2 md:gap-4">
+        <h3 className="font-serif text-foreground font-semibold text-xs md:text-sm line-clamp-2">
+          {product.name}
+        </h3>
+        <div className="mt-auto flex flex-col items-center gap-2 md:gap-4 w-full">
+          <div className="flex items-center justify-center gap-2 text-xs md:text-sm">
+            {product.weight && (
+              <>
+                <span className="font-bold text-destructive">{displayWeight}</span>
+                <span className="text-muted-foreground">|</span>
+              </>
+            )}
+            <span className="text-accent font-semibold text-sm md:text-lg">
+              {product.price ?? "Contact for Price"}
+            </span>
+          </div>
+          <div className="flex justify-center gap-0.5 mb-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
+            ))}
+          </div>
+          <Link
+            to="/contact"
+            className="inline-block w-full text-center px-3 py-2 bg-destructive text-destructive-foreground rounded-md text-xs md:text-sm font-medium hover:brightness-90 transition-colors"
+          >
+            Inquire Now
+          </Link>
         </div>
-        <div className="flex justify-center gap-0.5 mb-1">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
-          ))}
-        </div>
-        <Link
-          to="/contact"
-          className="inline-block w-full text-center px-3 py-2 bg-destructive text-destructive-foreground rounded-md text-xs md:text-sm font-medium hover:brightness-90 transition-colors"
-        >
-          Inquire Now
-        </Link>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ProductCard = ({ product }: { product: typeof featuredProducts[0] }) => (
   <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col h-full">

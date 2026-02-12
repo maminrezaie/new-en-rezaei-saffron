@@ -30,6 +30,30 @@ export const productSections: ProductSection[] = [
           "https://rezaei-saffron.ir/wp-content/uploads/2026/01/Negin1-3.png",
         ],
       },
+      {
+        name: "Negin Saffron (1g)",
+        shortDescription: "1g super export-grade Negin saffron. Current year, fresh, fully red. Traditionally dried. Strong aroma and flavor.",
+        description: "Premium super export-grade Negin saffron, 1 gram pack. Current year's harvest, fresh and fully red. Traditionally and naturally dried with strong saffron aroma and flavor. Perfect for home use and gifting.",
+        weight: "1 gram",
+        price: "$1.79",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/1gramNegin1.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/1gramNegin2.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/Negin-kilo-second.png",
+        ],
+      },
+      {
+        name: "Negin Saffron (500g Wholesale)",
+        shortDescription: "500g super export-grade Negin saffron. Current year, fresh. From Gonabad saffron farms. Traditionally dried.",
+        description: "Premium wholesale Negin saffron, 500 grams. Super export-grade, current year's harvest, fresh and aromatic. Sourced from the finest saffron farms of Gonabad. Naturally and traditionally dried. Ideal for bulk buyers, retailers, and international trade.",
+        weight: "500 grams",
+        price: "$857.14",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/wholesale11.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/wholesale2.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/wholesale3.png",
+        ],
+      },
     ],
   },
   {
@@ -74,6 +98,24 @@ export const productSections: ProductSection[] = [
           "https://rezaei-saffron.ir/wp-content/uploads/2026/01/Sefid1Final.png",
           "https://rezaei-saffron.ir/wp-content/uploads/2026/01/Sefid2Final.png",
           "https://rezaei-saffron.ir/wp-content/uploads/2026/01/Sefid4.png",
+        ],
+      },
+    ],
+  },
+  {
+    id: "economy",
+    title: "Economy Saffron",
+    products: [
+      {
+        name: "Economy Saffron (Narmeh)",
+        shortDescription: "One mesqal (4.608g) kitchen-grade saffron. Current year, aromatic. Medium coloring. No branding, resale-ready.",
+        description: "Economy-grade saffron (Narmeh), ideal for everyday cooking. Current year's harvest with strong aroma and flavor. Medium coloring power. Packaged without branding, suitable for resale. An affordable option for those who want genuine saffron flavor without premium pricing.",
+        weight: "4.6 grams",
+        price: "$2.86",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/narmeh11.jpg",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/narmeh2.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/narmeh3.png",
         ],
       },
     ],
@@ -145,6 +187,58 @@ export const productSections: ProductSection[] = [
         images: [
           "https://rezaei-saffron.ir/wp-content/uploads/2025/12/1006146401_17899734.jpg",
           "https://rezaei-saffron.ir/wp-content/uploads/2025/12/zereshk.png",
+        ],
+      },
+      {
+        name: "Barberry (500g)",
+        shortDescription: "500g fresh Qaen barberry. Traditionally dried. Vacuum-sealed, no branding — resale-ready.",
+        description: "Fresh premium barberry from Qaen, 500 grams. Current year's product, traditionally dried. Hygienic vacuum-sealed packaging with Qaen Saffron branding, no address or phone — suitable for resale. Perfect for rice dishes, salads, and traditional Iranian cuisine.",
+        weight: "500 grams",
+        price: "$2.86",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/500g-barberry1.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/barberry2.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/GhaenBarberry3.png",
+        ],
+      },
+    ],
+  },
+  {
+    id: "dried-fruits",
+    title: "Dried Fruits",
+    products: [
+      {
+        name: "Dried Mulberry",
+        shortDescription: "150g naturally dried white mulberry. Fully organic. No branding, resale-ready. Sweet, a natural sugar substitute.",
+        description: "Naturally dried white mulberry, 150 grams. Fully organic with no additives. Packaged in plain bags without branding — suitable for resale. Sweet and delicious, a natural substitute for sugar in tea. Rich in vitamins and minerals.",
+        weight: "150 grams",
+        price: "$1.07",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/mulbery11-1.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/mulberry2.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/mulberry3.png",
+        ],
+      },
+      {
+        name: "Jujube",
+        shortDescription: "250g large-seed Birjand jujube. Current year, naturally dried. Delicious, no bitterness. Vacuum-sealed.",
+        description: "Premium large-seed jujube from Birjand, 250 grams. Current year's harvest, naturally dried. Delicious with no bitterness. Simple vacuum-sealed packaging without branding — suitable for resale. Rich in vitamins C and A, supports immune health and digestion.",
+        weight: "250 grams",
+        price: "$0.86",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/jujubie1.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/jujubeA22.png",
+        ],
+      },
+      {
+        name: "Dried Apricot Slices",
+        shortDescription: "200g dried apricot from Gonabad, Khorasan orchards. Naturally dried, delicious. No branding.",
+        description: "Dried apricot slices from the orchards of Gonabad, Khorasan. 200 grams, naturally dried. Delicious and nutritious. Packaged without branding — suitable for resale. A healthy snack rich in fiber, potassium, and vitamins.",
+        weight: "200 grams",
+        price: "$1.07",
+        images: [
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/persimons1.png",
+          "https://rezaei-saffron.ir/wp-content/uploads/2026/02/persimons2.png",
         ],
       },
     ],
