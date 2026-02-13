@@ -19,7 +19,7 @@ import bunchBulk2 from "@/assets/bunch-saffron-bulk-2.png";
 import neginKiloSecond from "@/assets/negin-kilo-second.png";
 import giftWoodenBoxSecond from "@/assets/gift-wooden-box-second.jpg";
 import featuredBg from "@/assets/featured-bg.jpg";
-import neginBulk from "@/assets/negin-bulk.png";
+import neginBulk from "@/assets/khatam-negin-bulk-2.png";
 import saffronRootBulk from "@/assets/saffron-root-bulk.jpg";
 import bulkNegin1 from "@/assets/bulk-negin-1.jpg";
 import bulkRoot1 from "@/assets/bulk-root-1.png";
@@ -325,7 +325,7 @@ const Index = () => {
       </section>
 
       {/* Bulk Saffron Purchase */}
-      <section className="py-8 md:py-20 bg-muted">
+      <section className="py-4 md:py-12 bg-muted">
         <div className="section-container">
           <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
             Bulk Saffron Purchase
@@ -372,7 +372,7 @@ const Index = () => {
           </div>
 
           {/* Contact Strip */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-4">
               <a href="tel:+989150616788" className="flex flex-col items-center gap-1 text-foreground hover:text-accent transition-colors">
                 <Phone className="w-10 h-10 text-primary" />
@@ -473,39 +473,39 @@ const Index = () => {
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {/* Enamad */}
             <a referrerPolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=704029&Code=jtK72VeurNpOtvdBCXRoOxgOF2Uk9GSd" className="hover:opacity-80 transition-opacity">
-              <img src={trustEnamad} alt="Enamad Trust Seal" className="h-16 w-auto" />
+              <img src={trustEnamad} alt="Enamad Trust Seal" className="h-20 w-auto" />
             </a>
             {/* Emalls */}
             <a href="https://emalls.ir/Shop/74549/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src="https://service.emalls.ir/neshan?id=74549" alt="Emalls.ir Trust Seal" className="h-16 w-auto" referrerPolicy="origin" />
+              <img src="https://service.emalls.ir/neshan?id=74549" alt="Emalls.ir Trust Seal" className="h-20 w-auto" referrerPolicy="origin" />
             </a>
             {/* Torob */}
             <a href="https://torob.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src="https://torob.com/favicon.ico" alt="Torob" className="h-10 w-10 rounded" />
+              <img src="https://torob.com/favicon.ico" alt="Torob" className="h-14 w-14 rounded" />
               <span className="text-xs text-muted-foreground">Torob</span>
             </a>
             {/* Tipax */}
             <a href="https://tipax.ir" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src={trustTipax} alt="Tipax Courier" className="h-14 w-auto" />
+              <img src={trustTipax} alt="Tipax Courier" className="h-18 w-auto" />
             </a>
             {/* Post.ir */}
             <a href="https://post.ir" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src={trustPostIr} alt="Iran Post" className="h-14 w-auto" />
+              <img src={trustPostIr} alt="Iran Post" className="h-18 w-auto" />
             </a>
             {/* Zarinpal */}
             <a href="https://zarinpal.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src={trustZarinpal} alt="Zarinpal" className="h-14 w-auto" />
+              <img src={trustZarinpal} alt="Zarinpal" className="h-18 w-auto" />
             </a>
             {/* USDT */}
             <div className="flex flex-col items-center gap-1">
-              <div className="h-10 w-10 rounded-full bg-[#26A17B] flex items-center justify-center">
+              <div className="h-14 w-14 rounded-full bg-[#26A17B] flex items-center justify-center">
                 <span className="text-white font-bold text-sm">₮</span>
               </div>
               <span className="text-xs text-muted-foreground">USDT</span>
             </div>
             {/* Iranicard */}
             <div className="flex flex-col items-center gap-1">
-              <div className="h-10 w-10 rounded bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+              <div className="h-14 w-14 rounded bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
                 <span className="text-white font-bold text-[10px]">IC</span>
               </div>
               <span className="text-xs text-muted-foreground">Iranicard</span>
