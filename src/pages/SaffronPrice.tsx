@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Phone, Mail } from "lucide-react";
 import { productSections, type Product } from "@/data/products";
-import neginBulk from "@/assets/negin-bulk.png";
+import neginBulk from "@/assets/khatam-negin-bulk-2.png";
 import saffronRootBulk from "@/assets/saffron-root-bulk.jpg";
 import bulkNegin1 from "@/assets/bulk-negin-1.jpg";
 import bulkRoot1 from "@/assets/bulk-root-1.png";
@@ -124,7 +124,7 @@ const SaffronPrice = () => {
         </div>
 
         {/* Bulk Saffron Purchase */}
-        <section className="py-12 md:py-20 bg-muted mt-12">
+        <section className="py-4 md:py-12 bg-muted mt-12">
           <div className="section-container">
             <h2 className="text-2xl md:text-3xl font-serif text-center text-primary mb-1">
               Bulk Saffron Purchase
@@ -158,7 +158,7 @@ const SaffronPrice = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <div className="flex items-center gap-4">
               <a href="tel:+989150616788" className="flex flex-col items-center gap-1 text-foreground hover:text-accent transition-colors">
                   <Phone className="w-10 h-10 text-primary" />

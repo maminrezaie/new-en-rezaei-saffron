@@ -85,7 +85,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="relative z-50">
       {/* Top Bar */}
       <div className="bg-primary/80 text-primary-foreground">
         <div className="section-container relative flex items-center justify-center h-8 px-4">
