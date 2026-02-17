@@ -27,6 +27,7 @@ import trustEnamad from "@/assets/trust-enamad.png";
 import trustTipax from "@/assets/trust-tipax.png";
 import trustPostIr from "@/assets/trust-post-ir.png";
 import trustZarinpal from "@/assets/trust-zarinpal.png";
+import emallsTrust from "@/assets/emalls-trust.png";
 
 const categories = [
   { name: "Negin Saffron", image: neginCategory, link: "/products#bunch" },
@@ -477,7 +478,7 @@ const Index = () => {
             </a>
             {/* Emalls */}
             <a href="https://emalls.ir/Shop/74549/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src="https://service.emalls.ir/neshan?id=74549" alt="Emalls.ir Trust Seal" className="h-16 w-auto" referrerPolicy="origin" />
+              <img src={emallsTrust} alt="Emalls.ir Trust Seal" className="h-16 w-auto" />
             </a>
             {/* Torob */}
             <a href="https://torob.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity">
@@ -523,7 +524,7 @@ const Index = () => {
 const RecentProductCard = ({ product }: { product: Product }) => {
   const displayWeight = product.weight.replace(' grams', 'g').replace(' gram', 'g');
   return (
-    <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(20%-10px)] snap-start">
+    <div className="bg-card rounded-lg overflow-hidden shadow-md card-hover flex flex-col flex-shrink-0 w-[calc(55%-6px)] md:w-[calc(22%-10px)] snap-start">
       <div className="aspect-square overflow-hidden bg-muted relative group">
         <img
           src={product.images[0]}
