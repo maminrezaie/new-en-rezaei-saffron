@@ -199,14 +199,20 @@ const SaffronPrice = () => {
 
         {/* Custom CTA */}
         <section className="bg-accent/10 py-16 mt-12">
-          <div className="section-container max-w-3xl text-center">
+          <div className="section-container max-w-3xl text-center" dir="rtl">
+            <h3 className="text-xl md:text-2xl font-serif text-foreground mb-3">
+              منبع جهانی قیمت روز زعفران ایران
+            </h3>
+            <p className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed">
+              قیمت به‌روز زعفران ایرانی در بازار جهانی — به‌روزرسانی روزانه از مزارع زعفران گناباد و قائن، خراسان
+            </p>
             <a
               href="https://rezaei-saffron.ir/saffron-today-price/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
             >
-              قیمت زعفران مشهد
+              قیمت زعفران مشهد — مشاهده قیمت روز
             </a>
           </div>
         </section>
