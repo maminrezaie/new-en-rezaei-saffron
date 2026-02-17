@@ -1,51 +1,58 @@
 
 
-# Site Updates Plan
+## Plan: Product Data Updates, Emalls Image, Wider Slider Cards, and Saffron Price Page Link
 
-## 1. Make Top Bar Non-Sticky (Header)
+### 1. Fix all "4.6g" / "4.6 grams" weights to "4.608g" / "4.608 grams"
 
-**File: `src/components/Header.tsx`**
+**File: `src/data/products.ts`**
+- Change every `weight: "4.6 grams"` to `weight: "4.608 grams"`
+- Change every `weight: "4.608 grams"` (already correct in some) -- leave as-is
+- Affected products: Negin Saffron (4.6g), Bunch Saffron (4.6g), White Saffron Root (4.6g), Economy Saffron (4.6g), Gift Wooden Box (4.6g), Gift Round Tin (4.6g)
+- Products already at "4.608 grams" (Velvet Box, Khatam) stay unchanged
 
-- Change `<header className="sticky top-0 z-50">` to `<header className="relative z-50">` so the header scrolls away with the page instead of staying fixed at the top.
+### 2. Round all product prices to whole numbers
 
-## 2. Bulk Section Updates (Homepage)
+**File: `src/data/products.ts`**
+- `$9.29` -> `$9`
+- `$1.79` -> `$2`
+- `$857.14` -> `$857`
+- `$6.07` -> `$6`
+- `$2.00` -> `$2`
+- `$1.07` -> `$1` (Saffron Root, Mulberry, Apricot)
+- `$2.86` -> `$3` (Economy Saffron, Barberry 500g)
+- `$8.93` -> `$9`
+- `$7.14` -> `$7`
+- `$8.57` -> `$9` (Velvet Box, Khatam)
+- `$5.36` -> `$5`
+- `$0.86` -> `$1`
+- `$0.57` -> `$1`
+
+### 3. Make homepage Recent Products slider cards a bit wider
 
 **File: `src/pages/Index.tsx`**
+- Change `RecentProductCard` width from `w-[calc(50%-6px)] md:w-[calc(20%-10px)]` to `w-[calc(55%-6px)] md:w-[calc(22%-10px)]`
 
-- **Less breathing space above headline**: Reduce `py-8 md:py-20` to `py-4 md:py-12` on the bulk section.
-- **Change Negin second image**: The uploaded image (`wholesale11-2.png`) will be copied to `src/assets/khatam-negin-bulk-2.png` and used as the second (hover) image in `bulkNeginImages` array, replacing the current `neginBulk`.
-- **Move contact icons lower**: Add more top margin to the contact strip (change `mt-8` to `mt-14`) so the icons sit further down in the section.
+### 4. Replace Emalls trust seal with uploaded PNG
 
-## 3. Sync Bulk Section with Saffron Price Page
+- Copy `user-uploads://Emalls.png` to `src/assets/emalls-trust.png`
+- Import it in `Index.tsx`
+- Replace the external URL `https://service.emalls.ir/neshan?id=74549` with the imported asset
+
+### 5. Saffron Price page -- add link section for daily updated prices
 
 **File: `src/pages/SaffronPrice.tsx`**
+- In the CTA section (lines 200-212), enhance the presentation:
+  - Add Persian text introducing the link as a global, daily-updated source for Iranian saffron market prices
+  - Keep the existing link to `https://rezaei-saffron.ir/saffron-today-price/`
+  - Add descriptive Persian text like: "منبع جهانی قیمت روز زعفران ایران -- به‌روزرسانی روزانه"
 
-- Apply the same padding reduction (`py-4 md:py-12`).
-- Import and use the new Negin second image (`khatam-negin-bulk-2.png`) instead of `neginBulk` for the hover image.
-- Increase contact icon spacing to match (`mt-14`).
+### Technical Summary
 
-## 4. Storefront Image — Show Lower Part
-
-**File: `src/pages/About.tsx`**
-
-- Change the storefront image from `object-cover` (which centers by default) to `object-cover object-bottom` so the lower part of the building (the storefront entrance) is visible.
-
-## 5. Enlarge Trust Seal Icons
-
-**File: `src/pages/Index.tsx`**
-
-- Increase the trust seal image heights from `h-16`/`h-14`/`h-10` to `h-20`/`h-18`/`h-14` respectively for all logos (Enamad, Emalls, Torob, Tipax, Post.ir, Zarinpal, USDT, Iranicard).
-
----
-
-## Technical Summary
-
-| File | Changes |
-|---|---|
-| `src/components/Header.tsx` | `sticky top-0` to `relative` |
-| `src/pages/Index.tsx` | Bulk section padding, new Negin hover image, contact icons spacing, trust seal sizes |
-| `src/pages/SaffronPrice.tsx` | Sync bulk section padding, new hover image, contact icons spacing |
-| `src/pages/About.tsx` | Add `object-bottom` to storefront image |
-
-**New asset**: Copy `user-uploads://wholesale11-2.png` to `src/assets/khatam-negin-bulk-2.png`
+| Change | File(s) |
+|--------|---------|
+| Weight "4.6" to "4.608" | `src/data/products.ts` |
+| Round prices to whole numbers | `src/data/products.ts` |
+| Wider slider cards | `src/pages/Index.tsx` (line 526) |
+| Emalls trust seal image | Copy asset + update `src/pages/Index.tsx` (line 480) |
+| Saffron price page link section | `src/pages/SaffronPrice.tsx` (lines 200-212) |
 
